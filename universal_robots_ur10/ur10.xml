@@ -1,0 +1,44 @@
+<mujoco>
+  <compiler angle="degree" coordinate="local"/>
+  <default>
+    <joint armature="0.1" damping="1" limited="true"/>
+    <geom conaffinity="1" condim="3" density="1000" friction="1 0.1 0.1" margin="0.001"/>
+    <motor ctrllimited="true" ctrlrange="-2 2" gear="100"/>
+    <general ctrlrange="-2 2"/>
+  </default>
+  <option integrator="RK4" timestep="0.001"/>
+  <worldbody>
+    <!-- base link -->
+    <body name="base_link" pos="0 0 0">
+      <geom name="base_link_geom" mesh="meshes/base.obj"/>
+    </body>
+    <!-- shoulder link -->
+    <body name="shoulder_link" pos="0 0 0.1273">
+      <geom name="shoulder_link_geom" mesh="meshes/shoulder.obj"/>
+    </body>
+    <!-- upper arm link -->
+    <body name="upper_arm_link" pos="0.6127 0 0.1273">
+      <geom name="upper_arm_link_geom" mesh="meshes/upper_arm.obj"/>
+    </body>
+    <!-- forearm link -->
+    <body name="forearm_link" pos="0.6127 0 0.0">
+      <geom name="forearm_link_geom" mesh="meshes/forearm.obj"/>
+    </body>
+    <!-- wrist 1 link -->
+    <body name="wrist_1_link" pos="0.6127 0 0.1639">
+      <geom name="wrist_1_link_geom" mesh="meshes/wrist_1.obj"/>
+    </body>
+    <!-- wrist 2 link -->
+    <body name="wrist_2_link" pos="0.816 0 0.1639">
+      <geom name="wrist_2_link_geom" mesh="meshes/wrist_2.obj"/>
+    </body>
+    <!-- wrist 3 link -->
+    <body name="wrist_3_link" pos="0.8801 0 0.1639">
+      <geom name="wrist_3_link_geom" mesh="meshes/wrist_3.obj"/>
+    </body>
+    <!-- tool link -->
+    <body name="tool0" pos="0.8801 0 0.0014">
+      <geom name="tool0_geom" mesh="meshes/tool0.STL"/>
+    </body>
+  </worldbody>
+</mujoco>
